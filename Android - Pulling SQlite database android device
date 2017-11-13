@@ -1,0 +1,11 @@
+
+	
+Here’s a hack for Android 5(Lollipop)
+
+
+
+1) adb shell "run-as [package_name] chmod -R 777 /data/data/[package_name]/databases" 
+2) adb shell "mkdir -p /sdcard/tempDB"
+3) adb shell "cp -r /data/data/[package_name]/databases/ /sdcard/tempDB/." 
+4) adb pull sdcard/tempDB/ . 
+5) adb shell "rm -r /sdcard/tempDB/*" 
